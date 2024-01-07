@@ -10,7 +10,7 @@ Versetzt euch in die UX-Rolle und macht eine UX-Review (siehe Einheit von Veroni
 
 Weiter müssen folgende Funktionalitäten in eurer Endabgabe der Kindergartenapplikation integriert sein (Diese dürfen nicht als UX-Feedback-Punkt genannt werden)
 
-* Filter und Sortierung
+* Filter und Sortierung - ✅
 
     * Filter nach Kindergarten (Alle Kinder aus Kindergarten x) - ✅
 
