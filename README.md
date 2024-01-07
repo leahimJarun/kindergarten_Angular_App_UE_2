@@ -10,15 +10,15 @@ Versetzt euch in die UX-Rolle und macht eine UX-Review (siehe Einheit von Veroni
 
 Weiter müssen folgende Funktionalitäten in eurer Endabgabe der Kindergartenapplikation integriert sein (Diese dürfen nicht als UX-Feedback-Punkt genannt werden)
 
-Filter und Sortierung
+* Filter und Sortierung
 
-    Filter nach Kindergarten (Alle Kinder aus Kindergarten x) - ✅
+* * Filter nach Kindergarten (Alle Kinder aus Kindergarten x) - ✅
 
-    Sortierung nach Kindergarten und Name der Kinder (alphabetisch) und Anmeldedatum (aufsteigend und absteigend, bitte hierfür neue Spalte im Grid) - ✅
+* * Sortierung nach Kindergarten und Name der Kinder (alphabetisch) und Anmeldedatum (aufsteigend und absteigend, bitte hierfür neue Spalte im Grid) - ✅
 
-Neue Seite mit Detailansicht zu jedem Kindergarten (Info zu Kindergarten + Bilder) - ✅
+* Neue Seite mit Detailansicht zu jedem Kindergarten (Info zu Kindergarten + Bilder) - ✅
 
-Loading Spinner beim initialen Laden der Daten und beim Löschen einer Kindergartenanmeldung - ✅
+* Loading Spinner beim initialen Laden der Daten und beim Löschen einer Kindergartenanmeldung - ✅
 
 Es ist ein Textfile mit den UX-Feedbackpunkten und dem Link zum Github-Repository abzugeben!
 
