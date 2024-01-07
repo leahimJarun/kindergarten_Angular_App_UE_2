@@ -1,0 +1,23 @@
+button.active {
+    background-color: orange;
+}
+
+.border-green {
+    border: 1px solid green;
+}
+
+button {
+    margin-right: 5px;
+}
+
+.spinner__loading {
+    display: flex;
+    justify-content: center;
+  }
+
+.my-full-width {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-decoration: underline;
+}

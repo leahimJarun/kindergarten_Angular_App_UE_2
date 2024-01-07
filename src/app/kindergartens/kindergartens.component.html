@@ -1,0 +1,12 @@
+<h1>Alle unsere Kindergärten</h1>
+<div class="spinner__loading">
+    <mat-spinner *ngIf="spinnerLoadingKindergartens" color="primary" mode="indeterminate"></mat-spinner>
+</div>
+<div *ngFor="let kindergarden of storeService.kindergardens" class="my-full-width">
+    <b>Kindergarten Nr.: {{kindergarden.id}}</b>
+    <h2>{{kindergarden.name}}</h2>
+    <b>Betreiber: </b>{{kindergarden.betreiber}}<br>
+    <b>Adresse: </b>{{kindergarden.address}}<br>
+    <b>Typ: </b>{{getTypeOfKindergartens(kindergarden.typ)}}<br>
+    <img width="200" src="{{kindergarden.imagePath}}" alt="Kindergarten Nr.: {{kindergarden.id}} {{kindergarden.name}}"><br><br>
+</div>

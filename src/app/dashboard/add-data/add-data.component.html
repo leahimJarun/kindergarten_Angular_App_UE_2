@@ -1,0 +1,54 @@
+
+<form class="my-form" [formGroup]="addChildForm">
+    <h2>Ihr Kind anmelden!</h2>
+    <div *ngIf = "messageSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Geschafft!</strong> Kind wurde erfolgreich abgemeldet
+      <button mat-mini-fab color="primary" (click)="removeMessage()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div *ngIf = "messageError" class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Fehler!</strong> Bitte alle Felder mit "*" bzw. roter Markierung mit passenden Daten befüllen.
+      <button mat-mini-fab color="primary" (click)="removeErrorMessage()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <mat-form-field class="my-full-width">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" type="input" formControlName="name" required>
+      <!--@if (name.invalid) {
+        <mat-error>{{getErrorMessageName()}}</mat-error>
+      }-->
+      <mat-error *ngIf="!submitted">Bitte tragen Sie einen Namen ein.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="my-full-width">
+      <mat-label>Geburtstag</mat-label>
+      <input matInput placeholder="Geburtsdatum" type="date" formControlName="birthDate" required>
+      <!--<input matInput placeholder="Geburtsdatum" type="date" formControlName="birthDate" [formControl]="numberFormControl" required>
+      <mat-error *ngIf="numberFormControl.hasError('min')">
+        Das mimimum Alter des zu anmeldenden Kindes ist 3.
+      </mat-error>
+      <mat-error *ngIf="numberFormControl.hasError('max')">
+        Das maximum Alter des zu anmeldenden Kindes ist 6.
+      </mat-error>-->
+      <mat-error *ngIf="!submitted">Bitte tragen Sie einen Geburtsdatum ein oder wählen Sie eins über den Kalender.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="my-full-width">
+      <mat-label>Bitte auswählen</mat-label>
+      <mat-select formControlName="kindergardenId" required>
+        <mat-option value="" disabled>Bitte auswählen</mat-option>
+        <mat-option *ngFor="let kindergarden of storeService.kindergardens" [value]="kindergarden.id">{{kindergarden.name}}, {{kindergarden.address}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="!submitted">Bitte wählen Sie einen Kindergarten aus der Liste.</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="reset" (click)="onSubmit()">Kind anmelden</button>
+    <!--
+    <input placeholder="Name" type="input" formControlName="name"><br />
+    <input placeholder="Geburtsdatum" type="date" formControlName="birthDate"><br />
+    <select formControlName="kindergardenId">
+        <option value="" disabled>Bitte auswählen</option>
+        <option *ngFor="let kindergarden of storeService.kindergardens" [ngValue]="kindergarden.id">
+            {{kindergarden.name}}, {{kindergarden.address}}</option>
+    </select>
+    <button type="submit">Kind anmelden</button>-->
+</form>
