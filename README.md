@@ -12,9 +12,9 @@ Weiter müssen folgende Funktionalitäten in eurer Endabgabe der Kindergartenapp
 
 * Filter und Sortierung
 
-* * Filter nach Kindergarten (Alle Kinder aus Kindergarten x) - ✅
+ * Filter nach Kindergarten (Alle Kinder aus Kindergarten x) - ✅
 
-* * Sortierung nach Kindergarten und Name der Kinder (alphabetisch) und Anmeldedatum (aufsteigend und absteigend, bitte hierfür neue Spalte im Grid) - ✅
+ * Sortierung nach Kindergarten und Name der Kinder (alphabetisch) und Anmeldedatum (aufsteigend und absteigend, bitte hierfür neue Spalte im Grid) - ✅
 
 * Neue Seite mit Detailansicht zu jedem Kindergarten (Info zu Kindergarten + Bilder) - ✅
 
