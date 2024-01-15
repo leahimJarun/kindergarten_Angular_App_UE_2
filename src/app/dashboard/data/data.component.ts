@@ -9,6 +9,7 @@ import { Child, ChildResponse } from 'src/app/shared/interfaces/Child';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatSort, Sort } from '@angular/material/sort';
 import { KindergartensComponent } from 'src/app/kindergartens/kindergartens.component';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-data',
@@ -20,13 +21,19 @@ export class DataComponent implements OnInit, AfterViewInit {
   event: any;
   //
 
-  constructor(public storeService: StoreService, private backendService: BackendService, private _liveAnnouncer: LiveAnnouncer) {}
+  constructor(public storeService: StoreService, private backendService: BackendService, private _liveAnnouncer: LiveAnnouncer) 
+  { 
+    this.myGroup = new FormGroup({
+    FilterkindergardenId: new FormControl()});
+  }
   @Input() currentPage!: number;
   @Output() selectPageEvent = new EventEmitter<number>();
   public page: number = 0;
   public firstPage: number = 1;
   message: boolean = false;
   public currentPaginatorPage: number = 0;
+
+  public myGroup: any;
 
   //SpinnerVariables
   spinnerValue = 0;
@@ -35,6 +42,8 @@ export class DataComponent implements OnInit, AfterViewInit {
   //Table and Paginator
   //dataSource = new MatTableDataSource<Child>(this.storeService.children);
   dataSource = new MatTableDataSource<Child>;
+  
+  
   
   //dataSource = new MatTableDataSource<Child>;
   //dataSource = new MatTableDataSource<ChildResponse>(this.backendService.getChildren(1));

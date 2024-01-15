@@ -456,17 +456,17 @@
       "id": "0SWjS6W"
     },
     {
-      "name": "asd",
-      "kindergardenId": 5,
-      "birthDate": "2024-01-11",
-      "registerDate": "2024-01-7",
-      "id": "9FpYuQM"
+      "name": "test",
+      "kindergardenId": 4,
+      "birthDate": "2022-12-15",
+      "registerDate": "2024-1-15",
+      "id": "k6JeDEx"
     }
   ],
   "kindergardens": [
     {
       "id": 1,
-      "name": "Waldorfkindergarden im Zentrum Wiens",
+      "name": "Waldorfkindergarten im Zentrum Wiens",
       "address": "Oleandergasse 21, 1220 Wien",
       "betreiber": "MA 10 - Wiener Kindergärten",
       "typ": 1,
@@ -474,7 +474,7 @@
     },
     {
       "id": 2,
-      "name": "Kindergarden der Karl Schubert Schule für seelenpflegebedürftige Kinder und Jugendliche in Wien",
+      "name": "Kindergarten der Karl Schubert Schule für seelenpflegebedürftige Kinder und Jugendliche in Wien",
       "address": "Kanitzgasse 1-3, 1230 Wien",
       "betreiber": "Verein Karl Schubertschule für Seelenpflege- bedürftige Kinder und Jugendliche in Wien",
       "typ": 1,
@@ -482,7 +482,7 @@
     },
     {
       "id": 3,
-      "name": "Kindergarden der Stadt Wien",
+      "name": "Kindergarten der Stadt Wien",
       "address": "Audorfgasse 20, 1210 Wien",
       "betreiber": "MA 10 - Wiener Kindergärten",
       "typ": 2,
@@ -490,7 +490,7 @@
     },
     {
       "id": 4,
-      "name": "Kindergarden der Stadt Wien",
+      "name": "Kindergarten der Stadt Wien",
       "address": "Moßbachergasse 20-24, 1140 Wien",
       "betreiber": "MA 10 - Wiener Kindergärten",
       "typ": 2,

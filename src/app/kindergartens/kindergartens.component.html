@@ -1,4 +1,19 @@
 <h1>Alle unsere Kindergärten</h1>
+<h2>Übersicht aller Kindergärten (Version 1 - MatDialog)</h2>
+<div class="spinner__loading">
+    <mat-spinner *ngIf="spinnerLoadingKindergartens" color="primary" mode="indeterminate"></mat-spinner>
+</div>
+<div [(ngModel)]="id" name="divKindergardens" ngDefaultControl>
+    <ul *ngFor="let kindergarden of storeService.kindergardens">
+        <li>
+          <b>Kindergarten Nr.: {{kindergarden.id}}</b>
+          <h2>{{kindergarden.name}} <br /><button color="accent" mat-raised-button (click)="openDialog(kindergarden.id, kindergarden.typ)">Details zu Kindergarten Nr.: {{kindergarden.id}}</button></h2>
+        </li>
+    </ul>
+</div>
+<br />
+<br />
+<h2>Übersicht aller Kindergärten (Version 2 - alle auflisten)</h2>
 <div class="spinner__loading">
     <mat-spinner *ngIf="spinnerLoadingKindergartens" color="primary" mode="indeterminate"></mat-spinner>
 </div>

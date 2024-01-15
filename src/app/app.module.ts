@@ -29,6 +29,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSort, Sort, MatSortModule} from '@angular/material/sort';
 import { KindergartensComponent } from './kindergartens/kindergartens.component';
 
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +63,8 @@ import { KindergartensComponent } from './kindergartens/kindergartens.component'
 
     MatProgressSpinnerModule,
 
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

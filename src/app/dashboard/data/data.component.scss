@@ -10,6 +10,11 @@ button {
     margin-right: 5px;
 }
 
+.mat-raised-button {
+    background-color: green;
+    color: green;
+}
+
 .spinner__loading {
     display: flex;
     justify-content: center;
@@ -21,3 +26,28 @@ button {
     padding-right: 10%;
     text-decoration: underline;
 }
+
+table {
+    width: 100%;
+    text-align: left;
+    table-layout: fixed;
+}
+
+th, td {
+    word-wrap: break-word;
+    width: 100%;
+}
+
+@media screen and (max-width: 750px) {
+    tbody, thead { float: left; }
+    thead { min-width: 120px }
+    td,th { display: block }
+}
+
+h2.remove-whitespace {
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+    height: 10px;
+    font-size: medium;
+  }

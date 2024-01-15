@@ -1,4 +1,4 @@
-# KindergardenApp
+# KindergartenApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
@@ -23,7 +23,13 @@ Weiter müssen folgende Funktionalitäten in eurer Endabgabe der Kindergartenapp
 Es ist ein Textfile mit den UX-Feedbackpunkten und dem Link zum Github-Repository abzugeben!
 
 
-Browsers that the Implementation was tested with: Firefox - ✅.
+Browsers that the Implementation was tested with and works: Firefox - ✅.
+
+Firefox sometimes does not load the Children table always at refresh but on the following refresh loads data, do not realy know why it behaves like this in chrome this does not happen. Could be because of used Firefox addons.
+
+Chrome does not show the Calendar icon at "Geburtstag" at "Ihr Kind anmelden!".
+
+No errors in (F12) Developer Tools Console  - ✅. 
 
 ## How to run
 

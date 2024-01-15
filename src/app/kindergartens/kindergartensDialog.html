@@ -1,0 +1,15 @@
+<h1 mat-dialog-title><b>Kindergarten Nr.: {{data.kindergarden.id}}</b></h1>
+<mat-dialog-content class="mat-typography">
+    <div class="my-full-width">
+        
+        <h2>{{data.kindergarden.name}}</h2>
+        <b>Betreiber: </b>{{data.kindergarden.betreiber}}<br>
+        <b>Adresse: </b>{{data.kindergarden.address}}<br>
+        <!--<b>Typ: </b>{{getTypeOfKindergartens(data.typ)}}<br>-->
+        <b>Typ: </b>{{data.type}}<br>
+        <img width="200" src="{{data.kindergarden.imagePath}}" alt="Kindergarten Nr.: {{data.kindergarden.id}} {{data.kindergarden.name}}"><br><br>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close cdkFocusInitial>Close dialog</button>
+</mat-dialog-actions>

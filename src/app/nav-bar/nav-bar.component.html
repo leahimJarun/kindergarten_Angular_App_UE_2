@@ -5,10 +5,9 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item [routerLink]="['/dashboard']">Home</a>
-      <a mat-list-item [routerLink]="['/dashboard']">Dashboard</a>
+      <a mat-list-item [routerLink]="['/dashboard']">Home / Dashboard</a>
       <a mat-list-item [routerLink]="['/kindergartens']">Kindergärten</a>
-      <a mat-list-item [routerLink]="['/about']">About</a>
+      <a mat-list-item [routerLink]="['/about']">Über uns</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,7 +20,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Kindergärten Portal</span>
+      <span><h1>Kindergärten Portal</h1></span>
     </mat-toolbar>
     <app-header></app-header>
     <router-outlet></router-outlet>

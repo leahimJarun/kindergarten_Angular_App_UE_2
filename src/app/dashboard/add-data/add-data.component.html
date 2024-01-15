@@ -1,4 +1,3 @@
-
 <form class="my-form" [formGroup]="addChildForm">
     <h2>Ihr Kind anmelden!</h2>
     <div *ngIf = "messageSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
@@ -34,7 +33,7 @@
       <mat-error *ngIf="!submitted">Bitte tragen Sie einen Geburtsdatum ein oder wählen Sie eins über den Kalender.</mat-error>
     </mat-form-field>
     <mat-form-field class="my-full-width">
-      <mat-label>Bitte auswählen</mat-label>
+      <mat-label>Kindergarten</mat-label>
       <mat-select formControlName="kindergardenId" required>
         <mat-option value="" disabled>Bitte auswählen</mat-option>
         <mat-option *ngFor="let kindergarden of storeService.kindergardens" [value]="kindergarden.id">{{kindergarden.name}}, {{kindergarden.address}}</mat-option>

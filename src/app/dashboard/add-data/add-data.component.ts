@@ -1,11 +1,12 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, Validators, ReactiveFormsModule, AbstractControl, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, Validators, ReactiveFormsModule, AbstractControl, NgForm, FormGroup } from '@angular/forms';
 import { BackendService } from 'src/app/shared/backend.service';
 import { StoreService } from 'src/app/shared/store.service';
 
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { AnonymousSubject } from 'rxjs/internal/Subject';
 
 @Component({
   selector: 'app-add-data',
@@ -16,11 +17,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 })
 export class AddDataComponent implements OnInit{
 
-  constructor(private formbuilder: FormBuilder, public storeService: StoreService, public backendService: BackendService) {
-  }
-  public addChildForm: any;
+  constructor(private formbuilder: FormBuilder, public storeService: StoreService, public backendService: BackendService) {}
+  public addChildForm!: any;
   @Input() currentPage!: number;
-
 
   messageSuccess: boolean = false;
   messageError: boolean = false;
@@ -35,7 +34,7 @@ export class AddDataComponent implements OnInit{
       kindergardenId: ['', Validators.required],
       birthDate: [null, Validators.required],
       registerDate: [null]
-    })
+    });
     console.log('ngOnItit', this.addChildForm.name);
   }
 
