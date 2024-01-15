@@ -25,7 +25,6 @@ export class BackendService {
       this.storeService.childrenTotalCount = Number(data.headers.get('X-Total-Count'));
       
     });
-    //return this.storeService.children;
     return this.http.get(`http://localhost:5002/childs?_expand=kindergarden`);
     }
 

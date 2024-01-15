@@ -15,21 +15,11 @@
     <mat-form-field class="my-full-width">
       <mat-label>Name</mat-label>
       <input matInput placeholder="Name" type="input" formControlName="name" required>
-      <!--@if (name.invalid) {
-        <mat-error>{{getErrorMessageName()}}</mat-error>
-      }-->
       <mat-error *ngIf="!submitted">Bitte tragen Sie einen Namen ein.</mat-error>
     </mat-form-field>
     <mat-form-field class="my-full-width">
       <mat-label>Geburtstag</mat-label>
       <input matInput placeholder="Geburtsdatum" type="date" formControlName="birthDate" required>
-      <!--<input matInput placeholder="Geburtsdatum" type="date" formControlName="birthDate" [formControl]="numberFormControl" required>
-      <mat-error *ngIf="numberFormControl.hasError('min')">
-        Das mimimum Alter des zu anmeldenden Kindes ist 3.
-      </mat-error>
-      <mat-error *ngIf="numberFormControl.hasError('max')">
-        Das maximum Alter des zu anmeldenden Kindes ist 6.
-      </mat-error>-->
       <mat-error *ngIf="!submitted">Bitte tragen Sie einen Geburtsdatum ein oder wählen Sie eins über den Kalender.</mat-error>
     </mat-form-field>
     <mat-form-field class="my-full-width">
@@ -41,13 +31,4 @@
       <mat-error *ngIf="!submitted">Bitte wählen Sie einen Kindergarten aus der Liste.</mat-error>
     </mat-form-field>
     <button mat-raised-button color="accent" type="reset" (click)="onSubmit()">Kind anmelden</button>
-    <!--
-    <input placeholder="Name" type="input" formControlName="name"><br />
-    <input placeholder="Geburtsdatum" type="date" formControlName="birthDate"><br />
-    <select formControlName="kindergardenId">
-        <option value="" disabled>Bitte auswählen</option>
-        <option *ngFor="let kindergarden of storeService.kindergardens" [ngValue]="kindergarden.id">
-            {{kindergarden.name}}, {{kindergarden.address}}</option>
-    </select>
-    <button type="submit">Kind anmelden</button>-->
 </form>

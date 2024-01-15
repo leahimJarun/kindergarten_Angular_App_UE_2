@@ -40,13 +40,8 @@ export class DataComponent implements OnInit, AfterViewInit {
   spinnerLoading = true;
 
   //Table and Paginator
-  //dataSource = new MatTableDataSource<Child>(this.storeService.children);
   dataSource = new MatTableDataSource<Child>;
   
-  
-  
-  //dataSource = new MatTableDataSource<Child>;
-  //dataSource = new MatTableDataSource<ChildResponse>(this.backendService.getChildren(1));
   displayedColumns: string[] = ['name', 'kindergarten', 'address', 'alter', 'geburtsdatum', 'anmeldeDatum', 'kindAbmelden'];
 
   @ViewChild('childrenTable', {static: true}) table!: MatTable<any>;
@@ -55,14 +50,8 @@ export class DataComponent implements OnInit, AfterViewInit {
 
   //SortVariables
   @ViewChild(MatSort) sort!: MatSort;
-  /*@ViewChild(MatSort) set matSort(sort: MatSort) {
-    this.dataSource.sort = sort;
-  }*/
 
   ngAfterViewInit() {
-    //this.dataSource.sort = this.sort;
-    //this.dataSource.paginator = this.paginator;
-    //this.paginator.pageIndex = this.paginator.pageIndex;
     console.log('END ngAfterViewInit');
   }
 
@@ -71,7 +60,6 @@ export class DataComponent implements OnInit, AfterViewInit {
     this.backendService.getChildrenWithReturn().subscribe((param: any) => {
       this.length = param.length;
     });
-    //this.backendService.getChildren(this.currentPage);
     console.log("BEFORE");
     console.log(this.dataSource);
     this.backendService.getChildrenWithReturn().subscribe( (param: any) => {
@@ -88,9 +76,7 @@ export class DataComponent implements OnInit, AfterViewInit {
           case 'name': return item.name;
           case 'kindergarten': return item.kindergardenId;
           case 'address': return item.kindergardenId;
-          //case 'address': return item.name;
-          //case 'anmeldeDatum': return new Date(item.registerDate).toDateString();
-          case 'anmeldeDatum': return item.registerDate//new Date(item.registerDate).toLocaleDateString();
+          case 'anmeldeDatum': return item.registerDate;
           default: return item.id;
         }
       };
@@ -100,15 +86,7 @@ export class DataComponent implements OnInit, AfterViewInit {
       this.dataSource.filterPredicate = function (record,filter) {
         return record.kindergardenId.toString() == filter;
       }
-
-      /*
-      const sortState: Sort = {active: 'name', direction: 'desc'};
-      this.sort.active = sortState.active;
-      this.sort.direction = sortState.direction;
-      this.sort.sortChange.emit(sortState);
-      */
     });
-    //console.log("After subscribe done");
 
 
 
@@ -120,8 +98,6 @@ export class DataComponent implements OnInit, AfterViewInit {
   //FILTER
   public applyFilter = (value: number) => {
     console.log("Filter value: ", value);
-    //value = "Kindergarden der Stadt Wien ";
-    //this.dataSource.filter = value.toString();//value.trim().toLocaleLowerCase();//.trim().toLocaleLowerCase();
     this.dataSource.filter = value.toString();
   }
 
@@ -134,12 +110,8 @@ export class DataComponent implements OnInit, AfterViewInit {
     | number;
   };
 
-  /** Announce the change in sort state for assistive technology. */
+  //Announce change in sort state
   announceSortChange(sortState: Sort) {
-    // This example uses English messages. If your application supports
-    // multiple language, you would internationalize these strings.
-    // Furthermore, you can customize the message to add additional
-    // details about the values being sorted.
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
 
@@ -151,11 +123,7 @@ export class DataComponent implements OnInit, AfterViewInit {
   
   ngOnChanges(): void {
     this.backendService.getChildren(this.currentPage)
-    //if(changes['dataSource'].currentValue) {
-      //this.dataSource = new MatTableDataSource<Child>(this.storeService.children);
-      //this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
-  //}
   }
   
 
@@ -186,34 +154,24 @@ export class DataComponent implements OnInit, AfterViewInit {
   }
 
   public cancelRegistration(childId: string) {
-    //console.log('eventPageIndex', this.paginator.pageIndex);
     console.log('this.currentPage', this.currentPage);
-    //this.currentPaginatorPage = this.paginator.page;
-    //CURRENT_PAGE.currentP =  this.currentPage;
     this.backendService.deleteChildData(childId, this.currentPage);
     this.message = true;
-    //this.ngOnChanges();
-    //this.onPaginatorPageChange(this.event.pageIndex);
     this.onPaginatorPageChange(this.event.pageIndex);
     this.paginator.pageIndex = CURRENT_PAGE.currentP;
-    //this.paginator.pageIndex = this.currentPage;
-    //this.paginator.pageIndex = this.currentPage;
   }
 
   removeMessage() {
     this.message = false;
   }
   
-
   onPaginatorPageChange(event: PageEvent) {
     console.log('currentPage', this.currentPage);
     console.log('event.pageIndex', event.pageIndex);
     this.currentPage = event.pageIndex;
     this.selectPageEvent.emit(this.currentPage);
     this.backendService.getChildren(this.currentPage);
-    
   }
-
 }
 
 

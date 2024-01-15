@@ -12,8 +12,6 @@ import { AnonymousSubject } from 'rxjs/internal/Subject';
   selector: 'app-add-data',
   templateUrl: './add-data.component.html',
   styleUrls: ['./add-data.component.scss'],
-  //standalone: true,
-  //imports: [MatFormFieldModule, MatInputModule, MatSelectModule, ReactiveFormsModule],
 })
 export class AddDataComponent implements OnInit{
 
@@ -25,8 +23,6 @@ export class AddDataComponent implements OnInit{
   messageError: boolean = false;
 
   submitted = false;
-
-  //email = new FormControl('', [Validators.required, Validators.email]);
   
   ngOnInit(): void {
     this.addChildForm = this.formbuilder.group({
@@ -44,16 +40,6 @@ export class AddDataComponent implements OnInit{
     console.log('formattedTodaysDateFUNCTION: ', formattedTodaysDate);
     return formattedTodaysDate;
   }
-/*
-  ngOnChanges(): void {
-    this.submitted = false;
-    this.addChildForm.reset({
-      name: '', 
-      kindergardenId: '',
-      birthDate: ''
-     });
-  }
-*/
 
   onSubmit() {
     if(this.addChildForm.valid) {
@@ -65,13 +51,7 @@ export class AddDataComponent implements OnInit{
       console.log('addChildForm: ', this.addChildForm.registerDate);
       this.backendService.addChildData(this.addChildForm.value, this.currentPage);
       this.messageSuccess = true;
-      //this.submitted = true;
-      //this.addChildForm.reset( {} );
-      //this.addChildForm.resetForm( {} );
-      //this.clear(this.addChildForm);
-      //this.addChildForm.name.setErrors(null);
       console.log(this.addChildForm);
-      //this.submitted = false;
     } else {
       this.messageError = true;
       this.submitted = false;
@@ -120,10 +100,4 @@ export class AddDataComponent implements OnInit{
     }
     return age;
   }
-
-  //minimumAgeValidator(): ValidatorFn {
-  //  return (control: AbstractControl): { [key: string]: boolean} | null => {
-  //    const currentDate
-  //  }
-  //}
 }
