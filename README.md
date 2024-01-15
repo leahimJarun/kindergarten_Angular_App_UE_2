@@ -25,7 +25,7 @@ Es ist ein Textfile mit den UX-Feedbackpunkten und dem Link zum Github-Repositor
 
 Browsers that the Implementation was tested with and works: Firefox - ✅.
 
-Firefox sometimes does not load the Children table always at refresh but on the following refresh loads data, do not realy know why it behaves like this in chrome this does not happen. Could be because of used Firefox addons.
+When saving through angular in the IDE Firefox sometimes does not load the Children table always at first refresh but on the following refresh loads data, do not really know why it behaves like this in Chrome this does not happen. Could be because auto reload at save out of IDE or because of used Firefox addons. When the page runs no problems occur, everything loads fine every time.
 
 Chrome does not show the Calendar icon at "Geburtstag" at "Ihr Kind anmelden!".
 
